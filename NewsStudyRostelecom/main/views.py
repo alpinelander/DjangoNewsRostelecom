@@ -1,13 +1,20 @@
 from django.shortcuts import render
 #from django.http import HttpResponse
 # Create your views here.
+from .models import News, Product
 def index(request):
+    water = Product('Боржоми вода', 40, 2)
+    chokolate = Product('Шоколоад', 85, 1)
+    colors = ['red','blue','golden','black']
     l = ['раз', 'два', 'три']
     value = 10
     context = {'title':'Главная страница',
                'Header1': 'Заголовок из шаблона',
                'value' : value,
-               'numbers' : l
+               'numbers' : l,
+               'colors' : colors,
+               'water': water,
+               'chokolate': chokolate,
                }
     return render(request,'main/index.html', context)
 def about(request):

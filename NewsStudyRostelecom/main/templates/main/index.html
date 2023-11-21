@@ -12,6 +12,35 @@
   {% bootstrap_javascript %}
 </head>
 <body>
+
+<h3>Вытерите цвет:</h3>
+{% for color in colors %}
+    <input type="radio" id="{{ color }}" name="colors" value="{{ forloop.counter }}">
+    <label for="{{ color }}" > {{ color }} </label> <br>
+{% endfor%}
+<br>
+
+<table width="500 px;" border="1 px;">
+    <tr>
+        <th> Товар </th>
+        <th> Цена </th>
+        <th> Кол-во </th>
+        <th> Итого: </th>
+    </tr>
+    <tr>
+        <td> {{ water.title }} </td>
+        <td> {{ water.price }} </td>
+        <td> {{ water.quantity }} </td>
+        <td> {{ water.amount }} </td>
+    </tr>
+    <tr>
+        <td> {{ chokolate.title }} </td>
+        <td> {{ chokolate.price }} </td>
+        <td> {{ chokolate.quantity }} </td>
+        <td> {{ chokolate.amount }} </td>    </tr>
+
+</table>
+
 <div class="container-fluid">
     <div class="row">
 <!-- здесь шаблон меню -->
