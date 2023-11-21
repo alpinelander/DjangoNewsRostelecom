@@ -13,13 +13,31 @@
 </head>
 <body>
 
-<h3>Вытерите цвет:</h3>
-{% for color in colors %}
-    <input type="radio" id="{{ color }}" name="colors" value="{{ forloop.counter }}">
-    <label for="{{ color }}" > {{ color }} </label> <br>
-{% endfor%}
+    <form method="post">
+        {% csrf_token %}
+        <h3>Выберите цвет:</h3>
+        {% for color in colors %}
+            <input type="radio" id="{{ color }}" name="colors" value="{{ forloop.counter }}">
+            <label for="{{ color }}" > {{ color }} </label> <br>
+        {% endfor%}
+        <br>
+        <input class="btn-primary" type="submit" value="Сохранить">
+    </form>
 <br>
+    <form method="post">
+        {% csrf_token %}
+        <label>Введите наименование товара</label>
+        <input type="text" name="title">
+        <br>
+        <label>Введите цену товара</label>
+        <input type="text" name="price">
+        <br>
+        <label>Введите количество товара</label>
+        <input type="number" name="quantity" min="1" max="100">
+        <br>
+        <input class="btn-primary" type="submit" value="Создать товар">
 
+    </form> <br> <br> <br> <br> <br>
 <table width="500 px;" border="1 px;">
     <tr>
         <th> Товар </th>

@@ -3,6 +3,19 @@ from django.shortcuts import render
 # Create your views here.
 from .models import News, Product
 def index(request):
+
+    if request.method == 'POST':
+        print('Получили пост-запрос')
+        print(request.POST)
+        title = request.POST.get('title')
+        price = request.POST.get('price')
+        quantity = request.POST.get('quantity')
+        new_product = Product(title, float(price), int(quantity))
+        print('Создан товар: ', new_product.title, 'Общая сумма: ', new_product.price*new_product.quantity )
+    else:
+        print('Получили гет-запрос')
+        print(request.GET)
+
     water = Product('Боржоми вода', 40, 2)
     chokolate = Product('Шоколоад', 85, 1)
     colors = ['red','blue','golden','black']
