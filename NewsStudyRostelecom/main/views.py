@@ -2,7 +2,14 @@ from django.shortcuts import render
 #from django.http import HttpResponse
 # Create your views here.
 def index(request):
-    return render(request,'main/index.html')
+    l = ['раз', 'два', 'три']
+    value = 10
+    context = {'title':'Главная страница',
+               'Header1': 'Заголовок из шаблона',
+               'value' : value,
+               'numbers' : l
+               }
+    return render(request,'main/index.html', context)
 def about(request):
     return render(request,'main/about.html')
 def contacts(request):
