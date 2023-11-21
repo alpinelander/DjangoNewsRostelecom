@@ -11,7 +11,7 @@ def index(request):
         price = request.POST.get('price')
         quantity = request.POST.get('quantity')
         new_product = Product(title, float(price), int(quantity))
-        print('Создан товар: ', new_product.title, 'Общая сумма: ', new_product.price*new_product.quantity )
+        print('Создан товар: ', new_product.title, ', Общая сумма: ', new_product.price*new_product.quantity )
     else:
         print('Получили гет-запрос')
         print(request.GET)
