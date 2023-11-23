@@ -1,5 +1,5 @@
 from django.shortcuts import render
-#from django.http import HttpResponse
+from django.http import HttpResponse
 # Create your views here.
 from .models import News, Product
 def index(request):
@@ -10,8 +10,8 @@ def index(request):
         title = request.POST.get('title')
         price = request.POST.get('price')
         quantity = request.POST.get('quantity')
-        new_product = Product(title, float(price), int(quantity))
-        print('Создан товар: ', new_product.title, ', Общая сумма: ', new_product.price*new_product.quantity )
+#        new_product = Product(title, float(price), int(quantity))
+#        print('Создан товар: ', new_product.title, ', Общая сумма: ', new_product.price*new_product.quantity )
     else:
         print('Получили гет-запрос')
         print(request.GET)
@@ -30,6 +30,22 @@ def index(request):
                'chokolate': chokolate,
                }
     return render(request,'main/index.html', context)
+def get_demo(request,a):
+    return HttpResponse(f'Вы ввели: {a}')
+
+def calc(request,a,operation,b):
+    if operation == 'plus':
+        return HttpResponse(f' Сумма равна: {a+b}')
+    elif operation == 'minus':
+        return HttpResponse(f' Разность равна: {a - b}')
+    elif operation == 'multiply':
+        return HttpResponse(f' Произведение равно: {a * b}')
+    elif operation == 'divide':
+        return HttpResponse(f' Деление равно: {a / b}')
+    elif operation == 'power':
+        return HttpResponse(f' Степень числа: {a ^ b}')
+
+
 def about(request):
     return render(request,'main/about.html')
 def contacts(request):
@@ -46,3 +62,7 @@ def signin(request):
     return render(request,'main/signin.html')
 def news(request):
     return render(request,'main/news.html')
+
+def custom_404(request, exception):
+#    return render(request,'main/news.html')
+    return HttpResponse(f'Страница не найдена, эксепшен такой: {exception}')
