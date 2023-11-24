@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %} Контакты {% endblock %}
 
-    <meta charset="UTF-8">
-    <title>Контакты</title>
-</head>
-<body>
-<table>
+{% block content %}
+        <div class="row">
+            <div class="text-center" style="margin-top:30px;">
+                    <table>
     <tr>
         <td>Имя</td>
         <td>Василий Иванович</td>
@@ -24,5 +21,9 @@
     </tr>
 
 </table>
-</body>
-</html>
+            </div>
+
+
+        </div>
+{% endblock %}
+

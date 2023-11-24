@@ -54,14 +54,21 @@ def content(request):
     return render(request,'main/content.html')
 def sitebar(request):
     return render(request,'main/sitebar.html')
+def header(request):
+    return render(request,'main/header.html')
+def body(request):
+    return render(request,'main/body.html')
+def news(request):
+    return render(request,'main/news.html')
+def last_news(request):
+    return render(request,'main/last_news.html')
 def create_user(request):
     return render(request,'main/create.html')
 def profile(request):
     return render(request,'main/profile.html')
 def signin(request):
     return render(request,'main/signin.html')
-def news(request):
-    return render(request,'main/news.html')
+
 
 def custom_404(request, exception):
 #    return render(request,'main/news.html')
