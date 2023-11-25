@@ -71,5 +71,6 @@ def signin(request):
 
 
 def custom_404(request, exception):
-#    return render(request,'main/news.html')
-    return HttpResponse(f'Страница не найдена, эксепшен такой: {exception}')
+#def custom_404(request):
+    return render(request,'main/404.html')
+#    return HttpResponse(f'Страница не найдена, эксепшен такой: {exception}')
