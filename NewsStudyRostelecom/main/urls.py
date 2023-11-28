@@ -32,6 +32,5 @@ urlpatterns = [
     path('sitebar/', views.sitebar, name='sitebar'),
     path('header/', views.header, name='header'),
     path('body/', views.body, name='body'),
-    path('news/', views.news, name='news'),
     path('last_news/', views.last_news, name='last_news'),
 ]
