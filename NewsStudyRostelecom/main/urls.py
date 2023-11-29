@@ -26,7 +26,6 @@ urlpatterns = [
     path('contacts/', views.contacts, name='telefon'),
     path('content/', views.content, name='content'),
     path('create/', views.create_user, name='create'),
-#    path('news/', views.news, name='news'),
     path('profile/', views.profile, name='profile'),
     path('signin/', views.signin, name='signin'),
     path('sitebar/', views.sitebar, name='sitebar'),

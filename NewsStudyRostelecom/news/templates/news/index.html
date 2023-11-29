@@ -1,0 +1,22 @@
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %} Главная страница {% endblock %}
+
+{% block content %}
+        <div class="row">
+                <div col-md-4>
+                        <article class="blog-post">
+                                <br>
+                                <br>
+                                <h2 class="blog-post-title">{{ article.title }}</h2>
+                                <p class="blog-post-meta"> {{ article.date }} <a href="#">{{ article.author }}</a></p>
+
+                                <p>{{ article.anouncement }}</p>
+
+                                <p>Это дополнительный контент-заполнитель абзаца. Он был написан, чтобы заполнить доступное пространство и показать, как более длинный фрагмент текста влияет на окружающий контент. Мы будем повторять это часто, чтобы демонстрация продолжалась, так что ищите точно такую же строку текста.</p>
+                                <p><a href="{{ article.get_absolute_url }}"> Ссылка на полную статью </a></p>
+                        </article>
+                </div>
+        </div>
+{% endblock %}
